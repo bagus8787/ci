@@ -1,0 +1,13 @@
+<VirtualHost *:80>
+ServerAdmin admin@admin.com
+DocumentRoot "C:\xampp\htdocs\ci-coreui\public"
+ServerName simpeg.localhost
+ServerAlias simpeg.localhost
+    <Directory "C:\xampp\htdocs\ci-coreui\public">
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+        Require all granted
+    </Directory>
+</VirtualHost>

@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="img2/pemprov.jpg" type="image/png">
+        <title>PA'RASANGANTA</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="vendors/linericon/style.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+        <link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css">
+        <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
+        <link rel="stylesheet" href="vendors/animate-css/animate.css">
+        <!-- main css -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+    </head>
+    <body>
+        
+        <!--================Header Menu Area =================-->
+        <header class="header_area">
+            <div class="main_menu">
+            	<nav class="navbar navbar-expand-lg navbar-light">
+					<div class="container">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<a class="navbar-brand logo_h" href="index.html"><img src="img2/pemprov.jpg" alt="" width="70pxl"></a>
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+							<ul class="nav navbar-nav menu_nav ml-auto">
+                                    <li><div class="container h-100">
+                                            <div class="d-flex justify-content-center h-100">
+                                                <div class="searchbar">
+                                                    <input class="search_input" type="text" name="" placeholder="Masukkan Nama File">
+                                                    <a href="#" class="search_icon"><i class="fa fa-search"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li> 
+								<li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li> 
+                                <li class="nav-item"><a class="nav-link" href="#feature">Bidang</a></li>
+                                <li class="nav-item submenu dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i></a>
+                                    <ul class="dropdown-menu">
+                                    <li><a class="nav-icon" href="#"><i class="fa fa-fw fa-user"></i>Profile</a></li>
+                                    <li><a class="nav-icon" href="#"><i class="fa fa-fw fa-envelope-o"></i>Send email report</a></li>
+                                    <li><a class="nav-icon" href="#"><i class="fa fa-fw fa-gear"></i>Settings</a></li>
+                                    <li><a class="nav-icon" href="index.html"><i class="fa fa-fw fa-power-off"></i>Log Out</a></li>
+                                    
+                                </ul>
+                            </li>
+						</div> 
+					</div>
+            	</nav>
+            </div>
+        </header>
+        <!--================Header Menu Area =================-->
+        
+        <!--================Home Banner Area =================-->
+        <section class="banner_area">
+            <div class="banner_inner d-flex align-items-center">
+            	<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+				<div class="container">
+					<div class="banner_content text-center">
+						<h2>Selamat Datang</h2>
+						<div class="page_link">
+							<a href="index.html">Home</a>
+							<a href="guest.html">Tamu</a>
+						</div>
+					</div>
+				</div>
+            </div>
+        </section>
+        <!--================End Home Banner Area =================-->
+        
+        
+        <!-- Start Sample Area -->
+<?php
+include "koneksi.php";
+?>
+<hr> 
+<div class="col-lg-6">
+<form action="upload.php" method="POST" enctype="multipart/form-data">
+<table width="600" border="0">
+<tr>
+ <td width="100">Judul File</td>
+ <td><input type="text" name="judul" placeholder="Judul" required></td>
+</tr>
+<tr>
+<td>Instansi :<td>
+			<select placeholder="Pilih Instansi" name="instansi" id="instansi">
+				<option selected="selected">PILIH Instansi</option>
+				<option value="kristen">Bidang Sekretariatan</option>
+				<option value="islam">Bidang Pengembangan</option>
+				<option value="hindu">Bidang Kesejahteraan dan Kerja</option>
+				<option value="buddha">Bidang Pengusaha Karir</option>
+				<option value="konghucu">Bidang Perencanaan</option>
+			</select>
+        </td>
+</tr>
+<tr>
+ <td width="100">File PDF</td>
+ <td><input type="file" name="nama_file" required></td>
+</tr>
+<tr>
+ <td width="100"></td>
+ <td><input type="submit" value="Upload File"></td>
+</tr>
+</table>
+</form>
+</div>
+
+<hr>
+<div class="col-lg-6">
+<b>List File PDF</b>
+<table width="800" border='0' cellpadding="2" cellspacing="1" bgcolor="#000000">
+<tr>
+ <th bgcolor="#ffffff">Judul</th>
+ <th bgcolor="#ffffff" width="100">View</th>
+ <th bgcolor="#ffffff" width="100">Status</th>
+ <th bgcolor="#ffffff" width="100">Keterangan</th>
+</tr>
+<?php
+$query=mysql_query("SELECT * FROM data_file ORDER BY id DESC");
+while($data=mysql_fetch_array($query))
+{
+?>
+<tr>
+ <td bgcolor="#ffffff"><?php echo $data[judul];?></td>
+ <th bgcolor="#ffffff"><a href="view.php?id=<?php echo $data[id];?>">Lihat File</a></th>
+ <th bgcolor="#ffffff"><a bgcolor="#ffffff"><span class="badge badge-success">succes</span></a></th>
+ <th bgcolor="#ffffff"><?php echo $data[keterangan];?></th>
+</tr>
+</div>
+<?php
+}
+?>
+</table>
+			<!-- End Sample Area -->                 
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/stellar.js"></script>
+        <script src="vendors/lightbox/simpleLightbox.min.js"></script>
+        <script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
+        <script src="vendors/isotope/imagesloaded.pkgd.min.js"></script>
+        <script src="vendors/isotope/isotope-min.js"></script>
+        <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+        <script src="vendors/jquery-ui/jquery-ui.js"></script>
+        <script src="js/jquery.ajaxchimp.min.js"></script>
+        <script src="vendors/counter-up/jquery.waypoints.min.js"></script>
+        <script src="vendors/counter-up/jquery.counterup.js"></script>
+        <script src="vendors/popup/jquery.magnific-popup.min.js"></script>
+        <script src="js/mail-script.js"></script>
+        <script src="js/theme.js"></script>
+    </body>
+</html>

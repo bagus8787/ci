@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="img2/pemprov.jpg" type="image/png">
+        <title>PA'RASANGANTA</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="vendors/linericon/style.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+        <link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css">
+        <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
+        <link rel="stylesheet" href="vendors/animate-css/animate.css">
+        <link rel="stylesheet" href="vendors/popup/magnific-popup.css">
+        <!-- main css -->
+        <link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/responsive.css">
+		<link rel="stylesheet" href="css/style1.css">
+    </head>
+    <body data-spy="scroll" data-target="#mainNav" data-offset="70">
+        
+        <!--================Header Menu Area =================-->
+        <header class="header_area">
+            <div class="main_menu" id="mainNav">
+            	<nav class="navbar navbar-expand-lg navbar-light">
+					<div class="container">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<a class="navbar-brand logo_h" href="index.html"><img src="img2/pemprov.jpg" alt="" width="70pxl"></a>
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+							<ul class="nav navbar-nav menu_nav ml-auto">
+								<li><div class="container h-100">
+										<div class="d-flex justify-content-center h-100">
+											<div class="searchbar">
+												<input class="search_input" type="text" name="" placeholder="Masukkan NIP Pegawai">
+												<a href="#" class="search_icon"><i class="fa fa-search"></i></a>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="nav-item active"><a class="nav-link" href="#home">Home</a></li> 
+								<li class="nav-item"><a class="nav-link page-scroll" href="#bidang">Bidang</a></li> 
+								<li class="nav-item"><a class="nav-link page-scroll" href="#contact">FAQ</a></li>
+								<li class="nav-item"><a class="nav-link page-scroll" href="#contact">Contact</a></li>
+                        </ul>
+					</div> 
+				</div>
+            </nav>
+        </div>
+     </header>
+        <!--================Header Menu Area =================-->
+        
+		 <!--================Home Banner Area =================-->
+		 <section class="home_banner_area" id="home">
+				<div class="banner_inner">
+					<div class="container"> 
+						<div class="row banner_content">
+							<div class="banner_content-left-col col-sm-6">                      
+								<h2>PA'RASANGANTA</h2>
+								<p>Sistem Informasi Kepegawaian Daerah Provinsi Sulawesi Selatan</p>
+							</div>
+						   
+	
+			<!--================ Login Area =================-->
+		<div class="col-lag-3">
+			<div class="container">
+				<div class="login-content-right-left-col col-sm-6">
+						<ul class="nav nav-tabs">
+							<li class="nav-item">
+							<a class="nav-link active" href="#default-tab-1" data-toggle="tab">Tamu</a></li>
+							<li class="nav-item">
+							<a class="nav-link" href="#default-tab-2" data-toggle="tab">Pegawai</a></li>
+						   
+						</ul>
+						<div class="tab-content">                      
+							<div class="tab-pane active in" id="default-tab-1">
+							 <form method="POST"  class="margin-bottom-0" action="guest.html">
+								<center><h6 class="m-t-5"><i class="fa fa-key"></i> Login Untuk Tamu</h6></center>
+								  <div class="form-group m-b-15">
+								<input type="text" class="form-control input-lg" placeholder="Email"  id="email" name="email"   />
+							</div>
+							<div class="form-group m-b-15">
+								<input type="password" class="form-control input-lg" placeholder="Password"    id="password"   name="password"  />
+								<input type="checkbox" name="chek" > Remember me <br /> 
+							</div>
+	
+						   
+								<p class="text-right">
+									<div class="login-buttons m-b-15">
+								<input type="hidden" name="jenis" value="tamu"/>
+								<button type="submit" name="login" class="btn btn-success btn-block btn-lg">Masuk</button>
+							</div> 
+							<div class="col-lag-3" align="center">
+								<div class="container">
+									<p>Belum Punya Akun?&nbsp;<a class="text" href="register.html">Register</a></p>
+								 </div>
+							   </div>
+							</form>
+							</div>
+	
+							 <div class="tab-pane fade" id="default-tab-2">
+							 <form method="POST"  class="margin-bottom-0" action="detail_pegawai.html">
+							   <center><h6 class="m-t-5"><i class="fa fa-key"></i> Login Untuk Pegawai</h6></center>
+								  <div class="form-group m-b-15">
+								<input type="text" class="form-control input-lg" placeholder="NIP Pegawai"  id="username" name="username"   />
+							</div>
+							<div class="form-group m-b-15">
+								<input type="password" class="form-control input-lg" placeholder="Password"    id="password"   name="password"  />
+								<input type="checkbox" name="chek" > Remember me <br /> 
+							</div>
+	
+						   
+								<p class="text-right m-b-0">
+									<div class="login-buttons">
+								 <input type="hidden" name="jenis" value="pegawai"   />
+								<button type="submit" name="login" class="btn btn-danger btn-block btn-lg">Masuk</button>
+							</div>
+								</p>
+							</form>
+							</div>
+					</div>
+				</div>
+				</section>
+				<footer>
+						<div class="container text-center">
+							<p>DESIGN BY BADAN KEPEGAWAIAN DAERAH SULAWESI SELATAN</a></p>
+						</div>
+					</footer>
+
+		
+
+              
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/stellar.js"></script>
+        <script src="vendors/lightbox/simpleLightbox.min.js"></script>
+        <script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
+        <script src="vendors/isotope/imagesloaded.pkgd.min.js"></script>
+        <script src="vendors/isotope/isotope-min.js"></script>
+        <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+        <script src="js/jquery.ajaxchimp.min.js"></script>
+        <script src="vendors/counter-up/jquery.waypoints.min.js"></script>
+        <script src="vendors/counter-up/jquery.counterup.js"></script>
+        <script src="js/mail-script.js"></script>
+        <script src="vendors/popup/jquery.magnific-popup.min.js"></script>
+        <script src="js/theme.js"></script>
+    </body>
+</html>
